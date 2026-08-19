@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%90%92%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMjAiIGZpbGw9IiMwMEE5QTYiLz48Y2lyY2xlIGN4PSI4IiBjeT0iMTAiIHI9IjYiIGZpbGw9IiM0MjI1MTYiLz48Y2lyY2xlIGN4PSIzMiIgY3k9IjEwIiByPSI2IiBmaWxsPSIjNDIyNTE2Ii8+PGNpcmNsZSBjeD0iOCIgY3k9IjEwIiByPSIzLjIiIGZpbGw9IiNDNjhCNTkiLz48Y2lyY2xlIGN4PSIzMiIgY3k9IjEwIiByPSIzLjIiIGZpbGw9IiNDNjhCNTkiLz48ZWxsaXBzZSBjeD0iMjAiIGN5PSIyMyIgcng9IjEzIiByeT0iMTIiIGZpbGw9IiM0MjI1MTYiLz48ZWxsaXBzZSBjeD0iMjAiIGN5PSIyNSIgcng9IjkiIHJ5PSI4IiBmaWxsPSIjQzY4QjU5Ii8+PGNpcmNsZSBjeD0iMTUuNSIgY3k9IjIyIiByPSIyLjEiIGZpbGw9IiMzMzI3MkEiLz48Y2lyY2xlIGN4PSIyNC41IiBjeT0iMjIiIHI9IjIuMSIgZmlsbD0iIzMzMjcyQSIvPjxlbGxpcHNlIGN4PSIyMCIgY3k9IjI4IiByeD0iMy4yIiByeT0iMi4xIiBmaWxsPSIjMzMyNzJBIi8+PC9zdmc+">
 <style>
   :root{
     --cream:#faeee7;
@@ -60,7 +60,8 @@
   }
   .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
   .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.35rem;text-decoration:none;color:var(--brown-900);}
-  .logo .banana{font-size:1.4rem;}
+  .logo-mark{display:inline-flex;flex-shrink:0;}
+  .logo-mark svg{width:30px;height:30px;display:block;}
   nav ul{list-style:none;display:flex;gap:32px;margin:0;padding:0;}
   nav ul a{text-decoration:none;font-weight:500;color:var(--brown-mute);font-size:.98rem;transition:color .15s;}
   nav ul a:hover{color:var(--teal-dark);}
@@ -83,6 +84,7 @@
     padding:8px 16px;border-radius:999px;font-weight:700;font-size:.82rem;
     box-shadow:var(--shadow);margin-bottom:22px;
   }
+  .eyebrow svg{width:16px;height:16px;flex-shrink:0;}
   h1{font-size:clamp(2.2rem,4.5vw,3.4rem);font-weight:800;line-height:1.12;margin:0 0 20px;}
   h1 .accent{color:var(--teal);}
   .hero p.lead{font-size:1.15rem;color:var(--brown-mute);max-width:520px;margin:0 0 32px;}
@@ -94,7 +96,7 @@
   .stat b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:2rem;font-weight:800;color:var(--brown-800);}
   .stat span{font-size:.88rem;color:var(--brown-mute);}
 
-  .hero-art{position:relative;aspect-ratio:1/1;max-width:440px;margin:0 auto;}
+  .hero-art{position:relative;aspect-ratio:1/1;width:100%;max-width:440px;margin:0 auto;}
   .art-blob{
     position:absolute;inset:0;border-radius:42% 58% 60% 40%/48% 40% 60% 52%;
     background:linear-gradient(145deg,var(--teal) 0%,#4fd6c8 100%);
@@ -107,8 +109,10 @@
   }
   .art-card.c1{top:8%;left:-6%;color:var(--brown-800);}
   .art-card.c2{bottom:10%;right:-8%;color:var(--teal-dark);}
-  .art-emoji{font-size:1.5rem;}
-  .hero-monkey{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:7rem;filter:drop-shadow(0 12px 20px rgba(0,0,0,.15));}
+  .art-emoji{display:inline-flex;flex-shrink:0;}
+  .art-emoji svg{width:22px;height:22px;display:block;}
+  .hero-monkey{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 12px 20px rgba(0,0,0,.15));}
+  .hero-monkey svg{width:52%;height:52%;}
 
   /* Section shared */
   section{padding:84px 0;}
@@ -127,8 +131,9 @@
   }
   .service-icon{
     width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;
-    font-size:1.7rem;background:linear-gradient(145deg,var(--teal),#4fd6c8);color:#fff;
+    background:linear-gradient(145deg,var(--teal),#4fd6c8);color:#fff;
   }
+  .service-icon svg{width:26px;height:26px;}
   .service-card h3{font-size:1.35rem;margin:0;}
   .service-card p.desc{color:var(--brown-mute);margin:0;}
   .service-card ul{margin:0;padding-left:20px;color:var(--brown-800);font-size:.95rem;}
@@ -175,10 +180,11 @@
   .social-links{display:flex;gap:14px;}
   .social-links a{
     width:42px;height:42px;border-radius:50%;background:#fff;box-shadow:var(--shadow);
-    display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1.1rem;
-    transition:transform .15s;
+    display:flex;align-items:center;justify-content:center;text-decoration:none;
+    color:var(--brown-800);transition:transform .15s, color .15s;
   }
-  .social-links a:hover{transform:translateY(-3px);}
+  .social-links a svg{width:20px;height:20px;}
+  .social-links a:hover{transform:translateY(-3px);color:var(--teal-dark);}
   .copyright{color:var(--brown-mute);font-size:.85rem;text-align:center;margin-top:26px;}
 
   #back-to-top{
@@ -187,6 +193,7 @@
     text-decoration:none;box-shadow:0 8px 20px rgba(0,0,0,.22);opacity:0;pointer-events:none;
     transition:opacity .2s, transform .2s;z-index:60;
   }
+  #back-to-top svg{width:20px;height:20px;}
   #back-to-top.show{opacity:1;pointer-events:auto;}
 </style>
 </head>
@@ -194,7 +201,7 @@
 
 <header>
   <div class="wrap nav">
-    <a href="#top" class="logo"><span class="banana">🐒</span> WebMonkey</a>
+    <a href="#top" class="logo"><span class="logo-mark"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#00A9A6"/><circle cx="8" cy="10" r="6" fill="#422516"/><circle cx="32" cy="10" r="6" fill="#422516"/><circle cx="8" cy="10" r="3.2" fill="#C68B59"/><circle cx="32" cy="10" r="3.2" fill="#C68B59"/><ellipse cx="20" cy="23" rx="13" ry="12" fill="#422516"/><ellipse cx="20" cy="25" rx="9" ry="8" fill="#C68B59"/><circle cx="15.5" cy="22" r="2.1" fill="#33272A"/><circle cx="24.5" cy="22" r="2.1" fill="#33272A"/><ellipse cx="20" cy="28" rx="3.2" ry="2.1" fill="#33272A"/></svg></span> WebMonkey</a>
     <nav>
       <ul>
         <li><a href="#top">Strona główna</a></li>
@@ -215,7 +222,7 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <span class="eyebrow">🍌 Małpia moc dla Twojej marki</span>
+        <span class="eyebrow"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.8 3.3c.6-.2 1.2.4 1 1-1.9 6.7-1 11.6-8.4 13.6-3.1.8-5.7-.3-6.9-1.9-.5-.6 0-1.5.8-1.4 5.8.8 9.6-2.5 11.4-9.6.4-1.5 1.1-1.4 2.1-1.7Z"/><path d="M18.7 4.1c1 .3 1.8 1.2 2 2.3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg> Małpia moc dla Twojej marki</span>
         <h1>Twoja Małpa od <span class="accent">stron, sklepów</span> i reklamy <span class="accent">Meta&nbsp;Ads</span></h1>
         <p class="lead">Budujemy szybkie strony i sklepy internetowe, które sprzedają, a potem napędzamy je skuteczną reklamą na Facebooku i Instagramie — nastawioną na realny wynik, nie na próżne metryki.</p>
         <div class="hero-actions">
@@ -229,9 +236,9 @@
       </div>
       <div class="hero-art">
         <div class="art-blob"></div>
-        <div class="hero-monkey">🐒</div>
-        <div class="art-card c1"><span class="art-emoji">🛒</span> Sklep online</div>
-        <div class="art-card c2"><span class="art-emoji">📈</span> Meta Ads</div>
+        <div class="hero-monkey"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="8" cy="10" r="6.4" fill="#422516"/><circle cx="32" cy="10" r="6.4" fill="#422516"/><circle cx="8" cy="10" r="3.4" fill="#C68B59"/><circle cx="32" cy="10" r="3.4" fill="#C68B59"/><ellipse cx="20" cy="23" rx="14.5" ry="13.5" fill="#422516"/><ellipse cx="20" cy="25" rx="10" ry="9" fill="#F2D9BC"/><circle cx="15" cy="22" r="2.3" fill="#33272A"/><circle cx="25" cy="22" r="2.3" fill="#33272A"/><path d="M16 28q4 3 8 0" fill="none" stroke="#33272A" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <div class="art-card c1"><span class="art-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.4" fill="currentColor" stroke="none"/><circle cx="18" cy="20" r="1.4" fill="currentColor" stroke="none"/><path d="M2.5 3h2.4l2.2 12.2a2 2 0 0 0 2 1.6h8.4a2 2 0 0 0 2-1.6l1.3-7.2H6.2"/></svg></span> Sklep online</div>
+        <div class="art-card c2"><span class="art-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-9"/><path d="M15 6h6v6"/></svg></span> Meta Ads</div>
       </div>
     </div>
   </section>
@@ -247,7 +254,7 @@
       <div class="service-grid">
 
         <div class="service-card">
-          <div class="service-icon">🖥️</div>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M6.5 8.5h4M6.5 11.5h7"/></svg></div>
           <h3>Strony i Sklepy Internetowe</h3>
           <p class="desc">Tworzymy strony, które nie tylko wyglądają, ale też sprzedają. Szybkie, nowoczesne i dostosowane do każdego urządzenia.</p>
           <ul>
@@ -261,7 +268,7 @@
         </div>
 
         <div class="service-card">
-          <div class="service-icon">📣</div>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10v4a1 1 0 0 0 1 1h2l3.5 4.5a1 1 0 0 0 1.8-.6V5.1a1 1 0 0 0-1.8-.6L6 9H4a1 1 0 0 0-1 1Z"/><path d="M15 8.5a4 4 0 0 1 0 7"/><path d="M18 6a7.5 7.5 0 0 1 0 12"/></svg></div>
           <h3>Reklama Meta Ads</h3>
           <p class="desc">Nie przepalaj budżetu na reklamy, które nie działają. Tworzymy kampanie na Facebooku i Instagramie nastawione na wyniki.</p>
           <ul>
@@ -355,19 +362,19 @@
 <footer>
   <div class="wrap">
     <div class="footer-grid">
-      <a href="#top" class="footer-brand"><span class="banana">🐒</span> WebMonkey</a>
+      <a href="#top" class="footer-brand"><span class="logo-mark"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#00A9A6"/><circle cx="8" cy="10" r="6" fill="#422516"/><circle cx="32" cy="10" r="6" fill="#422516"/><circle cx="8" cy="10" r="3.2" fill="#C68B59"/><circle cx="32" cy="10" r="3.2" fill="#C68B59"/><ellipse cx="20" cy="23" rx="13" ry="12" fill="#422516"/><ellipse cx="20" cy="25" rx="9" ry="8" fill="#C68B59"/><circle cx="15.5" cy="22" r="2.1" fill="#33272A"/><circle cx="24.5" cy="22" r="2.1" fill="#33272A"/><ellipse cx="20" cy="28" rx="3.2" ry="2.1" fill="#33272A"/></svg></span> WebMonkey</a>
       <div class="social-links">
-        <a href="https://www.instagram.com/webmonkey.pl/" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
-        <a href="https://www.facebook.com/webmonkeypl/" target="_blank" rel="noopener" aria-label="Facebook">📘</a>
-        <a href="https://wa.me/48797456460?text=Cze%C5%9B%C4%87%2C%20chc%C4%99%20zapyta%C4%87%20o%20us%C5%82ugi" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
-        <a href="https://t.me/jurq12345" target="_blank" rel="noopener" aria-label="Telegram">✈️</a>
+        <a href="https://www.instagram.com/webmonkey.pl/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.facebook.com/webmonkeypl/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M13.4 20v-6.6h2.2l.3-2.6h-2.5V9.1c0-.75.2-1.26 1.28-1.26H16V5.5c-.23-.03-1-.1-1.9-.1-1.9 0-3.2 1.16-3.2 3.28v1.16H8.7v2.6h2.2V20h2.5Z" fill="currentColor"/></svg></a>
+        <a href="https://wa.me/48797456460?text=Cze%C5%9B%C4%87%2C%20chc%C4%99%20zapyta%C4%87%20o%20us%C5%82ugi" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a8.5 8.5 0 0 0-7.3 12.8L3.5 20.5l4.9-1.2A8.5 8.5 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.5 9.3c.2-.6.9-1.5 1.5-1.4.4 0 .7.4 1 1 .3.6.7 1.3.5 1.6-.2.4-.7.6-.5 1s.9 1.1 1.5 1.5c.6.4.9.3 1.2 0 .3-.3.6-.7 1-.5.4.1 1.5.7 1.6 1.1.1.4-.1 1.1-.6 1.5-.6.4-1.4.6-2.4.3-1.6-.5-3.5-2-4.4-3.7-.4-.7-.6-1.5-.4-2.4Z" fill="currentColor"/></svg></a>
+        <a href="https://t.me/jurq12345" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 3.5 2.5 11l6.2 2.3M21.5 3.5 18.8 20l-6.6-5.6M21.5 3.5 10 14.1l-.3 5"/></svg></a>
       </div>
     </div>
     <p class="copyright">© WebMonkey 2026 — Strony, Sklepy Internetowe i Reklama Meta Ads</p>
   </div>
 </footer>
 
-<a href="#top" id="back-to-top" aria-label="Do góry">↑</a>
+<a href="#top" id="back-to-top" aria-label="Do góry"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M6 11l6-6 6 6"/></svg></a>
 
 <script>
   var backToTop = document.getElementById('back-to-top');
