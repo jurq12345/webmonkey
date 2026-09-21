@@ -133,7 +133,7 @@
   .art-card.c2{bottom:10%;right:-8%;color:var(--teal-dark);}
   .art-emoji{display:inline-flex;flex-shrink:0;}
   .art-emoji svg{width:22px;height:22px;display:block;}
-  .hero-monkey{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 12px 20px rgba(0,0,0,.15));animation:floatY 5.5s ease-in-out 1.5s infinite;}
+  .hero-monkey{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 12px 20px rgba(0,0,0,.15));animation:floatY 5.5s ease-in-out infinite;}
   .hero-monkey svg{width:52%;height:52%;}
   @keyframes floatY{0%,100%{transform:translateY(0);}50%{transform:translateY(-9px);}}
 
@@ -141,18 +141,15 @@
   .hero-static-branch svg{width:100%;display:block;}
   @media (max-width:900px){.hero-static-branch{display:none;}}
 
-  .hero-swinger{position:absolute;top:10%;left:0;width:64px;z-index:5;pointer-events:none;filter:drop-shadow(0 10px 16px rgba(0,0,0,.18));animation:heroSwing 1.4s cubic-bezier(.45,.05,.55,.95) .1s both;}
-  .hero-swinger svg{width:100%;display:block;}
+  .hero-swinger{position:absolute;top:14%;left:0;width:66px;z-index:5;pointer-events:none;transform-origin:50% 15%;filter:drop-shadow(0 10px 16px rgba(0,0,0,.16));animation:heroSwing 1.9s cubic-bezier(.45,0,.55,1) .15s both;}
+  .hero-swinger svg{width:100%;display:block;overflow:visible;}
   @media (max-width:900px){.hero-swinger{display:none;}}
   @keyframes heroSwing{
-    0%{opacity:0;transform:translateX(-10vw) translateY(-6px) rotate(-10deg);}
-    6%{opacity:1;}
-    20%{transform:translateX(16vw) translateY(18px) rotate(9deg);}
-    38%{transform:translateX(32vw) translateY(-6px) rotate(-10deg);}
-    56%{transform:translateX(48vw) translateY(16px) rotate(8deg);}
-    74%{transform:translateX(62vw) translateY(-4px) rotate(-6deg);}
-    92%{transform:translateX(71vw) translateY(60px) rotate(3deg);opacity:1;}
-    100%{transform:translateX(73vw) translateY(90px) rotate(0deg);opacity:0;}
+    0%{opacity:0;transform:translate(-8vw,-30px) rotate(-16deg);}
+    8%{opacity:1;}
+    50%{transform:translate(38vw,110px) rotate(0deg);}
+    92%{opacity:1;transform:translate(80vw,-30px) rotate(15deg);}
+    100%{opacity:0;transform:translate(84vw,-34px) rotate(15deg);}
   }
 
   /* Section shared */
@@ -336,8 +333,13 @@
       </svg>
     </div>
     <div class="hero-swinger" aria-hidden="true">
-      <svg viewBox="0 0 40 40" aria-hidden="true">
-        <circle cx="9" cy="11" r="6.6" fill="#422516"/><circle cx="31" cy="11" r="6.6" fill="#422516"/><ellipse cx="20" cy="23.5" rx="14.5" ry="13.5" fill="#422516"/><ellipse cx="20" cy="24.5" rx="11" ry="10" fill="#FAEEE7"/><rect x="10" y="19.5" width="9" height="7" rx="3.4" fill="#33272A"/><rect x="21" y="19.5" width="9" height="7" rx="3.4" fill="#33272A"/><rect x="19" y="21.8" width="2" height="2.2" fill="#33272A"/><circle cx="12.7" cy="22.2" r="1" fill="#fff" opacity=".8"/><circle cx="23.7" cy="22.2" r="1" fill="#fff" opacity=".8"/><path d="M15.5 30.5q4.5 3.5 9 0" fill="none" stroke="#33272A" stroke-width="1.8" stroke-linecap="round"/>
+      <svg viewBox="0 0 40 56" aria-hidden="true">
+        <line x1="20" y1="0" x2="20" y2="15" stroke="#422516" stroke-width="3" stroke-linecap="round"/>
+        <ellipse cx="13" cy="5" rx="6" ry="3.5" fill="#6b8f47" transform="rotate(-20 13 5)"/>
+        <ellipse cx="28" cy="7" rx="6" ry="3.5" fill="#7ea355" transform="rotate(15 28 7)"/>
+        <g transform="translate(0,15)">
+          <circle cx="9" cy="11" r="6.6" fill="#422516"/><circle cx="31" cy="11" r="6.6" fill="#422516"/><ellipse cx="20" cy="23.5" rx="14.5" ry="13.5" fill="#422516"/><ellipse cx="20" cy="24.5" rx="11" ry="10" fill="#FAEEE7"/><rect x="10" y="19.5" width="9" height="7" rx="3.4" fill="#33272A"/><rect x="21" y="19.5" width="9" height="7" rx="3.4" fill="#33272A"/><rect x="19" y="21.8" width="2" height="2.2" fill="#33272A"/><circle cx="12.7" cy="22.2" r="1" fill="#fff" opacity=".8"/><circle cx="23.7" cy="22.2" r="1" fill="#fff" opacity=".8"/><path d="M15.5 30.5q4.5 3.5 9 0" fill="none" stroke="#33272A" stroke-width="1.8" stroke-linecap="round"/>
+        </g>
       </svg>
     </div>
     <div class="wrap hero-grid">
